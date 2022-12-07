@@ -1,5 +1,5 @@
 import React from 'react';
-import {Loader, LoaderContainer} from './styles';
+import { Loader, LoaderContainer } from './styles';
 
 const LoadingOverlay = () => {
   return (

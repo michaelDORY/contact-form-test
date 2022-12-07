@@ -1,6 +1,6 @@
-import React, {FC, ReactNode} from 'react';
-import {SpacerProps} from "../../../utils/spacer";
-import {StyledHeading} from './styles';
+import React, { FC, ReactNode } from 'react';
+import { SpacerProps } from '../../../utils/spacer';
+import { StyledHeading } from './styles';
 
 interface Props {
   isBold?: boolean;
@@ -12,9 +12,11 @@ interface Props {
 }
 
 const Heading: FC<Props> = (props) => {
-  const {variant, children, ...rest} = props
+  const { variant, children, ...rest } = props;
   return (
-    <StyledHeading as={variant} {...rest}>{children}</StyledHeading>
+    <StyledHeading as={variant} {...rest}>
+      {children}
+    </StyledHeading>
   );
 };
 

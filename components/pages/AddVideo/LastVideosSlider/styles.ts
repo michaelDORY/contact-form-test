@@ -1,22 +1,22 @@
-import styled from "styled-components";
-import {Box} from "../../../Box/styles";
-import {Flex} from "../../../Flex/styles";
+import styled from 'styled-components';
+import { Box } from '../../../Box/styles';
+import { Flex } from '../../../Flex/styles';
 
 export const Container = styled(Box)`
   background: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
-`
+`;
 
 export const ImageContainer = styled(Box)`
   & img {
     cursor: pointer;
-    transition: box-shadow .3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
   }
 
   & img:hover {
-    box-shadow: 0 0 10px #B1B1B1;
+    box-shadow: 0 0 10px #b1b1b1;
   }
-`
+`;
 
 export const InfoFlex = styled(Flex)`
   text-align: right;
@@ -35,7 +35,7 @@ export const InfoFlex = styled(Flex)`
   & p {
     font-size: 16px;
   }
-`
+`;
 
 export const ArrowContainer = styled.div<{ reverse?: boolean }>`
   display: flex;
@@ -44,10 +44,11 @@ export const ArrowContainer = styled.div<{ reverse?: boolean }>`
   width: 31px;
   height: 31px;
   background: rgba(37, 31, 31, 0.3);
-  transition: background .3s ease-in-out;
-  transform: rotate(${({reverse}) => reverse ? '180deg' : 0}) translateY(${({reverse}) => reverse ? '50%' : '-50%'});
+  transition: background 0.3s ease-in-out;
+  transform: rotate(${({ reverse }) => (reverse ? '180deg' : 0)})
+    translateY(${({ reverse }) => (reverse ? '50%' : '-50%')});
 
-  ${({reverse}) => reverse ? {right: '-40px'} : {left: '-40px'}}
+  ${({ reverse }) => (reverse ? { right: '-40px' } : { left: '-40px' })}
   & .slick-slide > div {
     padding-left: 20px;
     padding-right: 20px;
@@ -60,4 +61,4 @@ export const ArrowContainer = styled.div<{ reverse?: boolean }>`
   &:hover {
     background: rgba(37, 31, 31, 1);
   }
-`
+`;

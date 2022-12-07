@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface PlaceCardWrapperProps {
   inAdvance: boolean;
@@ -12,9 +12,12 @@ export const PlaceCardWrapper = styled.div<PlaceCardWrapperProps>`
   text-align: left;
   overflow: hidden;
 
-  ${({inAdvance}) => inAdvance ? ({
-    position: 'relative'
-  }) : null}
+  ${({ inAdvance }) =>
+    inAdvance
+      ? {
+          position: 'relative',
+        }
+      : null}
   & p, & h4 {
     width: 100%;
     white-space: nowrap;
@@ -22,9 +25,9 @@ export const PlaceCardWrapper = styled.div<PlaceCardWrapperProps>`
     text-overflow: ellipsis;
     margin: 0;
   }
-`
+`;
 
 export const MapContainer = styled.div`
   width: 237px;
   height: 237px;
-`
+`;

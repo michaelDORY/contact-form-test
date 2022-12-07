@@ -1,4 +1,4 @@
-import React, {Children, FC, ReactElement, ReactNode, useMemo} from 'react';
+import React, { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
 
 interface Props {
   currentPage: number;
@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Stepper: FC<Props> = (props) => {
-  const {currentPage, children} = props
+  const { currentPage, children } = props;
   const childrenArray = useMemo(() => Children.toArray(children), [children]);
   const pagesQuantity = useMemo(() => childrenArray.length, [childrenArray]);
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledImageOverlay = styled.div`
   height: 100%;
@@ -8,4 +8,4 @@ export const StyledImageOverlay = styled.div`
   width: 100%;
   font-size: 18px;
   direction: rtl;
-`
+`;

@@ -1,4 +1,4 @@
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   html,
@@ -53,13 +53,13 @@ export const GlobalStyle = createGlobalStyle`
   input[type=number] {
     -moz-appearance: textfield;
   }
-`
+`;
 
 export const theme = {
   colors: {
     primary: '#FAC900',
     primaryDark: '#c49800',
     inActive: '#E0E0E0',
-    inActiveText: '#9F9F9F'
-  }
-}
+    inActiveText: '#9F9F9F',
+  },
+};

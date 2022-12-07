@@ -1,13 +1,13 @@
-import React, {FC, ReactNode} from 'react';
-import {Container, type ContainerProps, ExtraInfo} from "./styles";
+import React, { FC, ReactNode } from 'react';
+import { Container, type ContainerProps, ExtraInfo } from './styles';
 
 type Props = {
-  children: ReactNode,
-  extraInfo: string
-} & ContainerProps
+  children: ReactNode;
+  extraInfo: string;
+} & ContainerProps;
 
 const WithExtraInfo: FC<Props> = (props) => {
-  const {children, extraInfo} = props
+  const { children, extraInfo } = props;
 
   return (
     <Container>

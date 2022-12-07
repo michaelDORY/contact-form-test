@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import {spacer, SpacerProps} from "../../utils/spacer";
+import styled from 'styled-components';
+import { spacer, SpacerProps } from '../../utils/spacer';
 
 enum ButtonVariants {
-  primary = 'primary'
+  primary = 'primary',
 }
 
 interface Props {
@@ -19,16 +19,16 @@ export const StyledButton = styled.button<Props>`
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 
-  ${({
-       variant = ButtonVariants.primary,
-       theme
-     }) => variant === ButtonVariants.primary ? {
-    backgroundColor: theme.colors.primary
-  } : {}}
+  ${({ variant = ButtonVariants.primary, theme }) =>
+    variant === ButtonVariants.primary
+      ? {
+          backgroundColor: theme.colors.primary,
+        }
+      : {}}
   &:hover {
-    background-color: ${({theme}) => theme.colors.primaryDark};
+    background-color: ${({ theme }) => theme.colors.primaryDark};
     transition: background-color 0.3s ease-in-out;
   }
 
-  ${({styles}) => spacer(styles || {})}
-`
+  ${({ styles }) => spacer(styles || {})}
+`;

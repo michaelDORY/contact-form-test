@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const FinalStepStyled = styled.div`
-
   & img {
     margin: 0 0 104px;
   }
@@ -18,4 +17,4 @@ export const FinalStepStyled = styled.div`
     color: #fff;
     font-size: 24px;
   }
-`
+`;

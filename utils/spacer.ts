@@ -22,4 +22,4 @@ export const spacer = (props: SpacerProps) => ({
   paddingRight: props.pr,
   paddingBottom: props.pb,
   paddingLeft: props.pl,
-})
+});

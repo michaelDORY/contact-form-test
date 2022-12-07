@@ -1,37 +1,40 @@
-import React, {FC} from 'react';
-import {UseFormReturn} from "react-hook-form";
-import {Flex} from '../../../../../Flex/styles';
+import React, { FC } from 'react';
+import { UseFormReturn } from 'react-hook-form';
+import { Flex } from '../../../../../Flex/styles';
 import Grid from '../../../../../Grid';
-import Input from "../../../../../Input";
-import Select, {OptionType} from "../../../../../Select";
-import {IFormValues} from "../../constraints";
+import Input from '../../../../../Input';
+import Select, { OptionType } from '../../../../../Select';
+import { IFormValues } from '../../constraints';
 
-const MOCK_OPTIONS = [{value: 'First', label: 'First'}, {
-  value: 'Second',
-  label: 'Second'
-}]
+const MOCK_OPTIONS = [
+  { value: 'First', label: 'First' },
+  {
+    value: 'Second',
+    label: 'Second',
+  },
+];
 
 interface Props {
-  hookForm: UseFormReturn<IFormValues>
+  hookForm: UseFormReturn<IFormValues>;
 }
 
 const ThirdStep: FC<Props> = (props) => {
-  const {hookForm} = props
-  const {register, watch, setValue} = hookForm
+  const { hookForm } = props;
+  const { register, watch, setValue } = hookForm;
 
   return (
-    <Flex direction="column" gap='40px'>
-      <Grid row reverseDirection gap='40px' justifyContent='stretch'>
+    <Flex direction="column" gap="40px">
+      <Grid row reverseDirection gap="40px" justifyContent="stretch">
         <Grid column>
           <Input
             register={register('placeOfResidenceDescription')}
             multiline
-            placeholder='תיאור קצר וקולע של מקום המגורים, לדוגמה: לגור בראש העין המתחדשת'
+            placeholder="תיאור קצר וקולע של מקום המגורים, לדוגמה: לגור בראש העין המתחדשת"
             label="שם פרטי"
           />
         </Grid>
       </Grid>
-      <Grid row reverseDirection gap='40px' justifyContent='stretch'>
+      <Grid row reverseDirection gap="40px" justifyContent="stretch">
         <Grid column>
           <Select
             value={watch('attractions')}
@@ -49,7 +52,7 @@ const ThirdStep: FC<Props> = (props) => {
           />
         </Grid>
       </Grid>
-      <Grid row reverseDirection gap='40px' justifyContent='stretch'>
+      <Grid row reverseDirection gap="40px" justifyContent="stretch">
         <Grid column>
           <Select
             value={watch('included.1')}
@@ -67,7 +70,7 @@ const ThirdStep: FC<Props> = (props) => {
           />
         </Grid>
       </Grid>
-      <Grid row reverseDirection gap='40px' justifyContent='stretch'>
+      <Grid row reverseDirection gap="40px" justifyContent="stretch">
         <Grid column>
           <Select
             value={watch('soundTrack')}

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface Props {
   width?: string;
@@ -6,6 +6,6 @@ interface Props {
 
 export const StyledContactForm = styled.form<Props>`
   position: relative;
-  width: ${({width}) => width || '100%'};
+  width: ${({ width }) => width || '100%'};
   padding: 62px 32px 67px;
-`
+`;

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {spacer, SpacerProps} from "../../utils/spacer";
+import styled from 'styled-components';
+import { spacer, SpacerProps } from '../../utils/spacer';
 
 interface Props {
   width?: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const Box = styled.div<Props>`
-  height: ${({height}) => height || 'auto'};;
-  width: ${({width}) => width || '100%'};
-  ${({styles}) => spacer(styles || {})}
-`
+  height: ${({ height }) => height || 'auto'};
+  width: ${({ width }) => width || '100%'};
+  ${({ styles }) => spacer(styles || {})}
+`;

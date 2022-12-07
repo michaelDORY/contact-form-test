@@ -1,8 +1,8 @@
-import React, {FC, ReactNode, useMemo} from 'react';
-import {UseFormReturn} from "react-hook-form";
-import Stepper from "../../../../Stepper";
-import {IFormValues} from "../constraints";
-import {NextArrow, PrevArrow} from "./Arrows";
+import React, { FC, ReactNode, useMemo } from 'react';
+import { UseFormReturn } from 'react-hook-form';
+import Stepper from '../../../../Stepper';
+import { IFormValues } from '../constraints';
+import { NextArrow, PrevArrow } from './Arrows';
 import {
   ButtonsContainer,
   Content,
@@ -12,8 +12,8 @@ import {
   NavItem,
   NextButton,
   PrevButton,
-  SubmitButton
-} from "./styles";
+  SubmitButton,
+} from './styles';
 
 interface Props {
   currentPage: number;
@@ -24,62 +24,62 @@ interface Props {
 }
 
 const FormStepper: FC<Props> = (props) => {
-  const {changePage, currentPage, children, stepTitles} = props
-  const isLastStep = useMemo(() => currentPage === stepTitles.length - 1, [currentPage])
-  const isFirstStep = useMemo(() => currentPage === 0, [currentPage])
+  const { changePage, currentPage, children, stepTitles } = props;
+  const isLastStep = useMemo(
+    () => currentPage === stepTitles.length - 1,
+    [currentPage, stepTitles]
+  );
+  const isFirstStep = useMemo(() => currentPage === 0, [currentPage]);
   const loading = false;
 
   return (
-    <FormStepperStyled style={{width: 'fit-content'}}>
+    <FormStepperStyled style={{ width: 'fit-content' }}>
       <Content>
-        <Stepper currentPage={currentPage}>
-          {children}
-        </Stepper>
-        <ButtonsContainer styles={{mt: '95px'}}>
-          {
-            isLastStep ? <div style={{width: '211px'}}/> : (
-              <NextButton disabled={currentPage >= stepTitles.length - 1}
-                          onClick={() => changePage(currentPage + 1)}>
-                <NextArrow/>
-                הבא
-              </NextButton>
-            )
-          }
+        <Stepper currentPage={currentPage}>{children}</Stepper>
+        <ButtonsContainer styles={{ mt: '95px' }}>
+          {isLastStep ? (
+            <div style={{ width: '211px' }} />
+          ) : (
+            <NextButton
+              disabled={currentPage >= stepTitles.length - 1}
+              onClick={() => changePage(currentPage + 1)}
+            >
+              <NextArrow />
+              הבא
+            </NextButton>
+          )}
           {isLastStep && (
             <SubmitButton disabled={loading}>הפקסרטון</SubmitButton>
-          )
-          }
-          {
-            !isFirstStep && (
-              <PrevButton disabled={currentPage <= 0}
-                          onClick={() => changePage(currentPage - 1)}>
-                <PrevArrow/>
-                הקודם
-              </PrevButton>
-            )
-          }
+          )}
+          {!isFirstStep && (
+            <PrevButton
+              disabled={currentPage <= 0}
+              onClick={() => changePage(currentPage - 1)}
+            >
+              <PrevArrow />
+              הקודם
+            </PrevButton>
+          )}
         </ButtonsContainer>
       </Content>
       <NavBarSection>
         <NavBar>
           <ul>
-            {
-              stepTitles.map((title, index) => Array.isArray(title) ? (
+            {stepTitles.map((title, index) =>
+              Array.isArray(title) ? (
                 <ul key={index}>
-                  {
-                    title.map((item, i) => (
-                      <NavItem key={i} isActive={currentPage === index}>
-                        {item}
-                      </NavItem>
-                    ))
-                  }
+                  {title.map((item, i) => (
+                    <NavItem key={i} isActive={currentPage === index}>
+                      {item}
+                    </NavItem>
+                  ))}
                 </ul>
               ) : (
                 <NavItem key={index} isActive={currentPage === index}>
                   {title}
                 </NavItem>
-              ))
-            }
+              )
+            )}
           </ul>
         </NavBar>
       </NavBarSection>

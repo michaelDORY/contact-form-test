@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LoaderContainer = styled.div`
   z-index: 5;
@@ -12,7 +12,7 @@ export const LoaderContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.1);
-`
+`;
 
 export const Loader = styled.div`
   display: inline-block;
@@ -54,4 +54,4 @@ export const Loader = styled.div`
       transform: rotate(360deg);
     }
   }
-`
+`;
