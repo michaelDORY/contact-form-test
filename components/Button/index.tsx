@@ -3,7 +3,7 @@ import {StyledButton} from './styles';
 
 interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 const Button: FC<Props> = (props) => {

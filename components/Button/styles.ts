@@ -11,7 +11,8 @@ interface Props {
 }
 
 export const StyledButton = styled.button<Props>`
-  padding: 20px 112px;
+  height: 60px;
+  width: 324px;
   font-weight: 700;
   font-size: 20px;
   border-radius: 60px;

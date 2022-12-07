@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
+    margin: 0;
   }
 
   h3 {
@@ -32,6 +33,25 @@ export const GlobalStyle = createGlobalStyle`
   button, input {
     outline: none;
     border: none;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
   }
 `
 

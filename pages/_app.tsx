@@ -5,7 +5,7 @@ import {Layout} from "../components/layout";
 import {GlobalStyle, theme} from "../theme";
 
 const heebo = Heebo({
-  weight: ['400', '500', '700'],
+  weight: ['400', '500', '700', '600'],
   subsets: ['latin', 'hebrew']
 })
 
