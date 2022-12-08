@@ -1,4 +1,13 @@
-import React, { Children, FC, ReactElement, ReactNode, useMemo } from 'react';
+import React, {
+  Children,
+  FC,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+} from 'react';
 
 interface Props {
   currentPage: number;
@@ -10,6 +19,16 @@ const Stepper: FC<Props> = (props) => {
   const { currentPage, children } = props;
   const childrenArray = useMemo(() => Children.toArray(children), [children]);
   const pagesQuantity = useMemo(() => childrenArray.length, [childrenArray]);
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    isFirstRender.current = false;
+  }, []);
+
+  useLayoutEffect(() => {
+    console.log('hello');
+    !isFirstRender.current && window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
 
   if (currentPage < 0 && currentPage >= pagesQuantity) return <>Error</>;
 
